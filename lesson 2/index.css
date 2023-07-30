@@ -1,0 +1,7 @@
+#app {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.post-item {
+    color: red;
+}
