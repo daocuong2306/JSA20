@@ -32,8 +32,7 @@ const Login = () => {
         if (acc == user.acc && pass == user.pass) {
             localStorage.setItem("idUser", user.id);
             alert('Đăng nhập thành công');
-            //dùng để chuyển trang
-            window.location.href = 'checkin.html';
+            //dùng để chuyển trang;.html';
             return;
         }
     }
