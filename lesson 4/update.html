@@ -10,30 +10,21 @@
 </head>
 
 <body>
-    <style>
-        a {
-            color: #fff;
-            text-decoration: none;
-        }
-    </style>
-    <div class="app">
-       
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Price</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody class="show">
-               
-               
-              
-            </tbody>
-        </table>
-        <button type="button" class="btn btn-success"><a href="them.html" class="">Add product</a></button>
+
+    <div class="app update">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name Product</label>
+            <input type="text"  class="form-control name" id="exampleInputEmail1" aria-describedby="emailHelp" value="1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Price</label>
+            <input type="text" class="form-control price" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button class="btn btn-primary" onclick="updateProducts()">Submit</button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
