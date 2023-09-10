@@ -23,7 +23,6 @@ const show = () => {
 
 }
 show()
-
 const deleteProduct = (id) => {
     let check = window.confirm("bạn có muốn xóa");
     if (check) {
@@ -32,4 +31,18 @@ const deleteProduct = (id) => {
         });
         alert("đã xóa thành công")
     }
+}
+
+
+const addProduct = () => {
+    let name = document.querySelector('.name').value;
+    let price = document.querySelector('.price').value;
+    fetch('http://localhost:3000/product', {
+        method: 'POST',
+        body: JSON.stringify({
+            'name': `${name}`,
+            'price': `${price}`
+        })
+
+    });
 }

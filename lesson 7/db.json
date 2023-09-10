@@ -4,6 +4,11 @@
       "id": 2,
       "name": "product 2",
       "price": 2000
+    },
+    {
+      "name": "áda",
+      "price": "1231",
+      "id": 3
     }
   ]
 }
