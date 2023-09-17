@@ -1,6 +1,3 @@
-
-
-
 const show = () => {
     let app = document.querySelector('.item');
     if (app) {
@@ -15,6 +12,7 @@ const show = () => {
                         <td>${item.name}</td>
                         <td>${item.price}</td>
                         <td><button onClick="deleteProduct(${item.id})">Xoa</button></td>
+                        <td><a href="update.html?id=${item.id}"><button >UPDATE</button></a></td>
                     </tr>
             `
                 }
@@ -32,8 +30,6 @@ const deleteProduct = (id) => {
         alert("đã xóa thành công")
     }
 }
-
-
 const addProduct = () => {
     let name = document.querySelector('.name').value;
     let price = document.querySelector('.price').value;
