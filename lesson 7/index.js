@@ -61,10 +61,24 @@ const showProductById = () => {
                     <label for="exampleInputPassword1" class="form-label">Price</label>
                     <input type="number" class="form-control price" id="exampleInputPassword1" value=${data.price}>
                 </div>
-                <button type="submit" class="btn btn-primary" >Submit</button>
+                <button type="submit" class="btn btn-primary" onClick='updateProduct()'>Update</button>
 
                 `
             })
     }
 }
 showProductById()
+
+const updateProduct = () => {
+    const id = new URLSearchParams(window.location.search).get('id');
+    const name = document.querySelector('.name').value;
+    const price = document.querySelector('.price').value;
+    fetch(`http://localhost:3000/product/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        },
+        body: JSON.stringify({ name: name, price: price })
+    })
+    window.location.href = 'index.html'
+}
