@@ -1,9 +1,20 @@
 {
   "product": [
     {
-      "name": "product update",
+      "name": "product cuong",
       "price": "122000",
       "id": 2
+    },
+    {
+      "name": "product 2",
+      "price": "12321312",
+      "id": 3
+    }
+  ],
+  "user" :[
+    {
+      "name" : "user",
+      "role" : 0
     }
   ]
 }

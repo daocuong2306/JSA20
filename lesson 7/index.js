@@ -13,8 +13,7 @@ const show = () => {
                         <td>${item.price}</td>
                         <td><button onClick="deleteProduct(${item.id})">Xoa</button></td>
                         <td><a href="update.html?id=${item.id}"><button >UPDATE</button></a></td>
-                    </tr>
-            `
+                    </tr>`
                 }
             })
     }
@@ -25,7 +24,10 @@ const deleteProduct = (id) => {
     let check = window.confirm("bạn có muốn xóa");
     if (check) {
         fetch(`http://localhost:3000/product/${id}`, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            }
         });
         alert("đã xóa thành công")
     }
@@ -35,11 +37,13 @@ const addProduct = () => {
     let price = document.querySelector('.price').value;
     fetch('http://localhost:3000/product', {
         method: 'POST',
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        },
         body: JSON.stringify({
             'name': `${name}`,
             'price': `${price}`
         })
-
     });
 }
 
@@ -51,11 +55,11 @@ const showProductById = () => {
         fetch(`http://localhost:3000/product/${id}`)
             .then(response => response.json())
             .then((data) => {
-                console.log(data);
+                console.log(data.name);
                 app.innerHTML = `
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Name</label>
-                    <input type="text" class="form-control name" id="exampleInputEmail1" aria-describedby="emailHelp" value=${data.name}>
+                    <input type="text" class="form-control name" id="exampleInputEmail1" value='${data.name}'>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Price</label>
@@ -68,7 +72,6 @@ const showProductById = () => {
     }
 }
 showProductById()
-
 const updateProduct = () => {
     const id = new URLSearchParams(window.location.search).get('id');
     const name = document.querySelector('.name').value;
