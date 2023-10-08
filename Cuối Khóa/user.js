@@ -9,8 +9,9 @@ const login = () => {
                     localStorage.setItem('user', JSON.stringify(user))
                     if (user.role == 1) {
                         window.location.href = `admin.html`;
-                        return;
+                      
                     }
+                    return;
                 }
             }
             alert("User not found");
